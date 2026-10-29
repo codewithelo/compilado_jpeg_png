@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  pdf-converter:
+    build: .
+    container_name: imagens_para_pdf
+    volumes:
+      - ./input:/app/input
+    # Como o script roda e finaliza, o container não precisa ficar rodando em loop infinito.
+    restart: "no"
